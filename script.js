@@ -74,32 +74,3 @@ setInterval(cycleRoles, 2000);
 // Initialize first role
 roleElement.textContent = roles[currentRoleIndex];
 roleElement.classList.add("fade-in");
-
-// Contact Form Handling
-document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-  const formValues = Object.fromEntries(formData.entries());
-
-  // Replace with your actual form handling
-  fetch('https://formspree.io/f/mvgaqvpp', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(formValues)
-  })
-  .then(response => {
-    if (response.ok) {
-      alert('Message sent successfully!');
-      this.reset();
-    } else {
-      throw new Error('Failed to send message');
-    }
-  })
-  .catch(error => {
-    alert('Error sending message. Please try again later.');
-    console.error(error);
-  });
-});
