@@ -74,3 +74,32 @@ setInterval(cycleRoles, 2000);
 // Initialize first role
 roleElement.textContent = roles[currentRoleIndex];
 roleElement.classList.add("fade-in");
+
+// Image lightbox functionality (optional)
+document.querySelectorAll('.gallery-item img').forEach(image => {
+    image.addEventListener('click', () => {
+        // Create lightbox modal
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <img src="${image.src}" alt="${image.alt}">
+                <p>${image.nextElementSibling.textContent}</p>
+                <button class="close-lightbox">&times;</button>
+            </div>
+        `;
+
+        document.body.appendChild(lightbox);
+
+        // Close lightbox
+        lightbox.querySelector('.close-lightbox').addEventListener('click', () => {
+            lightbox.remove();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.remove();
+            }
+        });
+    });
+});
