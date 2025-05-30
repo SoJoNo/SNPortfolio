@@ -44,7 +44,7 @@
         <div class="container">
             <div class="project-overview">
                 <h2>Project Overview</h2>
-                <p>Detailed description of the project. Explain the purpose, your role, and the challenges you faced. This is where you tell the story of the project.</p>
+                <p>Beans was made for one of my school projects. It was the Introduction to Rails project and it mainly asked for working with tables and seeding databases. This was my first big project with Rails and because of that I faced a couple challenges like where to even start with the code.</p>
 
                 <div class="project-specs">
                     <div class="spec-item">
@@ -99,21 +99,43 @@
 
                 <div class="process-step">
                     <h3>Research and Planning</h3>
-                    <p>Describe your initial research, user personas, competitive analysis, or any planning work you did.</p>
                     <div class="process-artifacts">
                         <img src="assets/beans/ERD.drawio.png" alt="ERD plan">
                         <p class="image-caption">Entity Relationship Diagram</p>
                     </div>
+                    <p>When starting my research, I had a couple issues finding an API I could actually work with. I wanted to do something coffee related for sure but there weren't any APIs that matched what I wanted.
+                        I wanted something with just generic coffee stores not Starbucks related but there were none and I was crunched for time so I couldn't make mine so I settled for the <a href="https://www.kaggle.com/datasets/starbucks/store-locations/data">Starbucks Location Worldwide API</a> on Kaggle.
+                        Then, I also wanted something for specific coffee types and brands. Thankfully, this was a lot easier to achieve as I found the <a href="https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset">Coffee Reviews Dataset</a> also on Kaggle
+                    </p>
                 </div>
 
                 <div class="process-step">
                     <h3>Challenges and Solutions</h3>
-                    <p>Highlight specific technical or design challenges you encountered and how you solved them.</p>
+                    <p><b>The real challenge came when implementing the review system:</b><br>
+                        Getting ratings to properly update across different models<br>
+                        Making sure all the filters worked smoothly<br>
+                        Debugging those frustrating nil errors when users weren't properly associated<br>
+                        <br><br>
+                        <b>Through trial and error (and some serious StackOverflow digging), I implemented solutions like:</b><br>
+                        Smart rating averages that update in real-time<br>
+                        A flexible filtering system that works across both shops and brands<br>
+                        Proper error handling for anonymous reviews
+                    </p>
                 </div>
 
                 <div class="process-step">
                     <h3>Final Outcome</h3>
-                    <p>Describe the final product, any metrics of success (increased engagement, better performance, etc.), and client/user feedback.</p>
+                    <p><b>I built a fully-functional coffee discovery app that:</b><br>
+                        Displays coffee shops worldwide with interactive maps<br>
+                        Shows detailed coffee brand information with mock user reviews<br>
+                        Features smart filtering for both shops and coffee products<br>
+                        <br><br>
+                        <b>The project taught me valuable lessons about:</b><br>
+                        Working with imperfect datasets<br>
+                        Building intuitive forms<br>
+                        Managing database relationships<br>
+                        Problem-solving through debugging<br><br>
+                        Most importantly, I created something genuinely useful for coffee lovers – even if it started with Starbucks data! The system now gracefully handles thousands of reviews while keeping the interface clean and user-friendly.</p>
                 </div>
             </div>
 
