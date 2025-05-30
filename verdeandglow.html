@@ -30,7 +30,7 @@
             <div class="project-meta">
                 <span class="project-category">Web Development</span>
                 <h1>Verde And Glow</h1>
-                <p class="project-tagline">Beans is a Ruby on Rails application that helps coffee enthusiasts discover Starbucks stores and premium coffee products worldwide.</p>
+                <p class="project-tagline">A full-stack e-commerce platform for an eco-conscious boutique.</p>
                 <div class="project-links">
                     <a href="https://verdeandglow.onrender.com" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     <a href="https://github.com/SoJoNo/verde_and_glow" class="btn secondary" target="_blank"><i class="fab fa-github"></i> View Code</a>
@@ -44,7 +44,7 @@
         <div class="container">
             <div class="project-overview">
                 <h2>Project Overview</h2>
-                <p>Detailed description of the project. Explain the purpose, your role, and the challenges you faced. This is where you tell the story of the project.</p>
+                <p>Verde & Glow is a Ruby on Rails e-commerce application designed to reflect the brand’s commitment to sustainability while delivering a seamless shopping experience.</p>
 
                 <div class="project-specs">
                     <div class="spec-item">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="spec-item">
                         <h3>Technologies</h3>
-                        <p>Ruby, Rails, SCSS, SQL, HTML, Docker, JavaScript</p>
+                        <p>Ruby, Rails, SCSS, SQL, HTML, JavaScript</p>
                     </div>
                 </div>
             </div>
@@ -99,21 +99,55 @@
 
                 <div class="process-step">
                     <h3>Research and Planning</h3>
-                    <p>Describe your initial research, user personas, competitive analysis, or any planning work you did.</p>
                     <div class="process-artifacts">
-                        <img src="assets/beans/ERD.drawio.png" alt="ERD plan">
+                        <img src="assets/verdeandglow/VerdeERD.drawio.png" alt="ERD plan">
                         <p class="image-caption">Entity Relationship Diagram</p>
                     </div>
+                    <p><b>Understanding the Brand:</b><br>
+                        - Worked closely with Verde And Glow to capture their ethos—prioritizing sustainability without sacrificing style.<br>
+                        - Analyzed their customer base: eco-conscious shoppers who value transparency and quality.
+                        <br><br>
+                        <b>Technical Blueprint:</b><br>
+                        - Designed an 8-table database schema to handle products, variants, categories, and orders.<br>
+                        - Mapped user flows for both shoppers and admins, ensuring intuitive navigation.<br>
+                        - Planned for scalability—like future subscription models or API integrations.
+                        <br><br>
+                        <b>UX Focus:</b><br>
+                        - Highlighted sustainability info (carbon impact, materials) on every product page.<br>
+                        - Mobile-first design so browsing feels effortless on any device.</p>
                 </div>
 
                 <div class="process-step">
                     <h3>Challenges and Solutions</h3>
-                    <p>Highlight specific technical or design challenges you encountered and how you solved them.</p>
+                    <p><b>ActiveStorage Image Hiccups</b><br>
+                        - Problem: Uploads sometimes failed, leaving broken images.<br>
+                        - Solution: Added client-side validation, fallback placeholders, and proper variant processing.
+                        <br><br>
+                        <b>Pagination + Filters Clash</b><br>
+                        - Problem: Kaminari lost filtered results when paginating.<br>
+                        - Solution: Restructured queries to preserve filters across pages and built reusable UI components.
+                        <br><br>
+                        <b>Admin Dashboard Quirks</b><br>
+                        - Problem: ActiveAdmin and Ransack had unexpected conflicts.<br>
+                        - Solution: Customized Ransack configurations and added manual filters for complex searches.
+                        <br><br>
+                        <b>Dynamic Pricing Logic</b><br>
+                        - Problem: Sale prices needed to display alongside original prices reliably.<br>
+                        - Solution: Added a regular_price column with automated tracking and clear visual cues for discounts.</p>
                 </div>
 
                 <div class="process-step">
                     <h3>Final Outcome</h3>
-                    <p>Describe the final product, any metrics of success (increased engagement, better performance, etc.), and client/user feedback.</p>
+                    <p><b>Features:</b><br>
+                        - Full-featured product catalog with filtering, search, and pagination<br>
+                        - Admin dashboard for inventory, pricing, and image management<br>
+                        - Mobile-responsive design with Tailwind CSS<br>
+                        - Sustainability-focused UX (carbon labels, ethical sourcing badges)
+                        <br><br>
+                        <b>Lessons Learned:</b><br>
+                        - Data modeling is everything—a clean schema saves headaches later.<br>
+                        - Admin tools need love too! Clear documentation prevents confusion.<br>
+                        - Error handling isn’t glamorous, but it’s what makes a product feel polished.</p>
                 </div>
             </div>
 
