@@ -30,7 +30,7 @@
             <div class="project-meta">
                 <span class="project-category">Software Development</span>
                 <h1>Emote - The Text Analyzer</h1>
-                <p class="project-tagline">Beans is a Ruby on Rails application that helps coffee enthusiasts discover Starbucks stores and premium coffee products worldwide.</p>
+                <p class="project-tagline">A sleek and expressive Android app with dynamic theming, intuitive navigation, and Firebase-powered user experience.</p>
                 <div class="project-links">
                     <a href="https://github.com/SoJoNo/beans" class="btn secondary" target="_blank"><i class="fab fa-github"></i> View Code</a>
                 </div>
@@ -43,7 +43,18 @@
         <div class="container">
             <div class="project-overview">
                 <h2>Project Overview</h2>
-                <p>Detailed description of the project. Explain the purpose, your role, and the challenges you faced. This is where you tell the story of the project.</p>
+                <p>Emote is a Kotlin-based Android application built using Jetpack Compose. It features a modern, responsive UI with light and dark theme support, bottom navigation for seamless screen transitions, and Firebase Authentication to manage user login and profile data. The app leverages Compose's declarative approach to deliver an elegant and customizable user interface with Google Fonts integration and animated components.
+                    The app does the following:
+                </p>
+                <ul>
+                    <li>Analyzes text input to detect emotions (joy, anger, sadness, etc.) using an AI API</li>
+
+                    <li>Tracks emotional history with a local database (Room)</li>
+
+                    <li>Supports authentication (Firebase) and theme customization (light/dark mode)</li>
+
+                    <li>Features a clean, Material 3-compliant UI with custom typography and colors</li>
+                </ul>
 
                 <div class="project-specs">
                     <div class="spec-item">
@@ -56,11 +67,11 @@
                     </div>
                     <div class="spec-item">
                         <h3>My Role</h3>
-                        <p>Frontend Development</p>
+                        <p>Frontend and Backend Development</p>
                     </div>
                     <div class="spec-item">
                         <h3>Technologies</h3>
-                        <p>Ruby, Rails, CSS, SQL, HTML, Docker, JavaScript</p>
+                        <p>Kotlin, Jetpack Compose, Android Studio</p>
                     </div>
                 </div>
             </div>
@@ -98,21 +109,29 @@
 
                 <div class="process-step">
                     <h3>Research and Planning</h3>
-                    <p>Describe your initial research, user personas, competitive analysis, or any planning work you did.</p>
-                    <div class="process-artifacts">
-                        <img src="assets/beans/ERD.drawio.png" alt="ERD plan">
-                        <p class="image-caption">Entity Relationship Diagram</p>
-                    </div>
+                    <ul>
+                        <li>Selected Firebase Auth for simplicity and scalability</li>
+                        <li>Used Material Theme Builder for color schemes supporting light/dark modes</li>
+                        <li>MVVM pattern with ViewModels managing UI state</li>
+                        <li>Repository pattern to abstract data sources (Firebase, Room, API)</li>
+                        <li>Chose the <a href="https://rapidapi.com/twinword/api/emotion-analysis">Emotion Analysis API</a> to build the project with </li>
+                    </ul>
                 </div>
 
                 <div class="process-step">
                     <h3>Challenges and Solutions</h3>
-                    <p>Highlight specific technical or design challenges you encountered and how you solved them.</p>
+                      <ul>
+                        <li><strong>Bottom navigation failed to track current route:</strong> Used <code>currentBackStackEntryAsState()</code> and <code>rememberNavController()</code> for accurate route tracking.</li>
+                        <li><strong>Theme toggle did not reflect in real-time:</strong> Refactored using <code>StateFlow</code> and <code>collectAsStateWithLifecycle()</code> for lifecycle-aware state updates.</li>
+                        <li><strong>Firebase user data was inaccessible inside Composables:</strong> Exposed user data via <code>LoginViewModel</code> and collected it using Compose state.</li>
+                        <li><strong>Custom fonts were not applying consistently:</strong> Integrated Google Fonts using Compose <code>Typography</code> and <code>FontFamily</code>.</li>
+                        <li><strong>Profile picture loading caused crashes:</strong> Switched to Coil's <code>rememberAsyncImagePainter</code> to load and fallback safely.</li>
+                    </ul>
                 </div>
 
                 <div class="process-step">
                     <h3>Final Outcome</h3>
-                    <p>Describe the final product, any metrics of success (increased engagement, better performance, etc.), and client/user feedback.</p>
+                    <p>The current version of Emote successfully delivers a polished mobile experience with a fully Compose-based UI, Firebase-backed authentication, and seamless theme switching. It sets the foundation for future features like profile editing, onboarding, DataStore-based theme persistence, and real-time data syncing.</p>
                 </div>
             </div>
 
