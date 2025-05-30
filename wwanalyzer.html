@@ -30,10 +30,10 @@
             <div class="project-meta">
                 <span class="project-category">Software Development</span>
                 <h1>Winnipeg Weather Analyzer</h1>
-                <p class="project-tagline">Beans is a Ruby on Rails application that helps coffee enthusiasts discover Starbucks stores and premium coffee products worldwide.</p>
+                <p class="project-tagline">WWA is a Python app that displays records of Winnipeg weather and temperature in previous years.</p>
                 <div class="project-links">
-                    <a href="https://github.com/SoJoNo/beans" class="btn secondary" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                    <a href="downloads/your-software.zip" class="btn secondary" download="YourSoftware-Package.zip"><i class="fas fa-download"></i> Download </a>
+                    <a href="https://github.com/SoJoNo/Programming-In-Python/tree/master/Final%20Project/weather_app" class="btn secondary" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                    <a href="assets/wwanalyzer/WWP-Installer.exe" class="btn secondary" download="WWP-Installer.exe"><i class="fas fa-download"></i> Download </a>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="container">
             <div class="project-overview">
                 <h2>Project Overview</h2>
-                <p>Detailed description of the project. Explain the purpose, your role, and the challenges you faced. This is where you tell the story of the project.</p>
+                <p>The Weather Processing App is a Python-based application developed for academic purposes. The project focuses on scraping historical daily weather data — specifically, the minimum, maximum, and mean temperatures — for Winnipeg from Environment Canada's climate archive. The scraped data is structured into a dictionary format and can be used for further analysis or visualization in later stages of the application. This modular scraper adheres to best practices, encapsulating all scraping logic within a single class (WeatherScraper) using Python’s HTMLParser.</p>
 
                 <div class="project-specs">
                     <div class="spec-item">
@@ -91,21 +91,43 @@
 
                 <div class="process-step">
                     <h3>Research and Planning</h3>
-                    <p>Describe your initial research, user personas, competitive analysis, or any planning work you did.</p>
-                    <div class="process-artifacts">
-                        <img src="assets/beans/ERD.drawio.png" alt="ERD plan">
-                        <p class="image-caption">Entity Relationship Diagram</p>
-                    </div>
+                    <p>Research began with analyzing the Environment Canada daily climate data website’s structure. The team investigated how historical data is embedded within URLs and examined how the HTML tables are structured across different months and years. It was determined that the temperature data resides in a table with the class table-striped, and that each row of interest includes the historical-data class. Manual inspection of URL behavior and View Page Source helped identify where and how data was stored, as well as how to detect when no more data is available.
+                        <br>
+                        The scraper was planned to:
+                    </p>
+                    <ul>
+                        <li>Iterate backwards in time month-by-month</li><br>
+                        <li>Automatically stop scraping after encountering 3 consecutive months with no data</li><br>
+                        <li>Parse data from static HTML (no JavaScript execution allowed)</li>
+                    </ul>
                 </div>
 
                 <div class="process-step">
                     <h3>Challenges and Solutions</h3>
-                    <p>Highlight specific technical or design challenges you encountered and how you solved them.</p>
+                    <ul>
+                        <li>
+                            <strong>Challenge:</strong> Initial versions using HTMLParser failed to locate and parse the right data due to misalignment with the actual HTML structure.<br>
+                            <strong>Solution:</strong> Refactored parser logic based on the actual source HTML, including use of column index mapping, scoped <code>&lt;th&gt;</code> tags for days, and safe numeric extraction.
+                        </li>
+                        <li>
+                            <strong>Challenge:</strong> The website uses a complex layout with multiple nested elements and misleading class names.<br>
+                            <strong>Solution:</strong> Isolated the exact table and row classes, then dynamically mapped column indices to temperature values.
+                        </li>
+                        <li>
+                            <strong>Challenge:</strong> Empty or malformed temperature values (e.g., "M", "—") caused <code>ValueError</code>s.<br>
+                            <strong>Solution:</strong> Added <code>try/except</code> blocks to safely skip non-numeric values.
+                        </li>
+                        <li>
+                            <strong>Challenge:</strong> Page blocking and inconsistent response headers.<br>
+                            <strong>Solution:</strong> Used a custom <code>User-Agent</code> header to mimic a real browser and avoid request denial.
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="process-step">
                     <h3>Final Outcome</h3>
-                    <p>Describe the final product, any metrics of success (increased engagement, better performance, etc.), and client/user feedback.</p>
+                    <p>The result is a fully functional Python module (scrape_weather.py) that can reliably scrape structured historical weather data from Environment Canada for Winnipeg. The WeatherScraper class can be invoked from any script and produces a dictionary of weather records in the required format:</p>
+                    <p>It handles dynamic backtracking, error tolerance, and self-terminates when no more historical data is detected. The class is ready to be integrated into the larger Weather Processing App and lays a strong foundation for further features such as data analysis or visualizations.</p>
                 </div>
             </div>
 

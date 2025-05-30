@@ -30,7 +30,7 @@
             <div class="project-meta">
                 <span class="project-category">UI/UX Design</span>
                 <h1>PiXELL River</h1>
-                <p class="project-tagline">Beans is a Ruby on Rails application that helps coffee enthusiasts discover Starbucks stores and premium coffee products worldwide.</p>
+                <p class="project-tagline">Multi-Factor Authentication System for PiXELL River.</p>
                 <div class="project-links">
                     <a href="https://www.figma.com/proto/GnxhTIsKXeEV18DmEcswKA/Group-2-Wireframe-Prototype?node-id=1854-653&p=f&t=QLzwVWm8dK8OjSmS-1&scaling=scale-down&content-scaling=fixed&page-id=1810%3A841&starting-point-node-id=1854%3A653&show-proto-sidebar=1" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> View Prototype</a>
                     <a href="https://www.figma.com/design/GnxhTIsKXeEV18DmEcswKA/Group-2-Wireframe-Prototype?node-id=1810-841&p=f&t=UU00z5wTa6jBpDTk-0" class="btn secondary" target="_blank"><i class="fab fa-github"></i> View Wireframe</a>
@@ -44,7 +44,7 @@
         <div class="container">
             <div class="project-overview">
                 <h2>Project Overview</h2>
-                <p>Detailed description of the project. Explain the purpose, your role, and the challenges you faced. This is where you tell the story of the project.</p>
+                <p>As part of PiXELL River’s initiative to modernize its digital banking services, this project focused on designing a multi-factor authentication (MFA) system integrated into the institution’s mobile app. The goal was to provide stronger account protection for both individual and business clients—particularly those from Indigenous communities—by introducing secure, flexible, and user-friendly login methods. Our solution was tailored to real user concerns about security, ease of access, and cultural sensitivity.</p>
 
                 <div class="project-specs">
                     <div class="spec-item">
@@ -53,15 +53,15 @@
                     </div>
                     <div class="spec-item">
                         <h3>Date</h3>
-                        <p>March 2025</p>
+                        <p>January 2025 - April 2025</p>
                     </div>
                     <div class="spec-item">
                         <h3>My Role</h3>
-                        <p>Frontend Development</p>
+                        <p>UI/UX Designer</p>
                     </div>
                     <div class="spec-item">
                         <h3>Technologies</h3>
-                        <p>Ruby, Rails, CSS, SQL, HTML, Docker, JavaScript</p>
+                        <p>Figma</p>
                     </div>
                 </div>
             </div>
@@ -71,24 +71,28 @@
                 <h2>Project Screens</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="assets/beans/about.png" alt="Beans About Page">
-                        <p class="image-caption">About page and homepage</p>
+                        <img src="assets/pixell/persona-analysis.png" alt="Coffee Brands Detail View">
+                        <p class="image-caption">Persona analysis</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/beans/coffee-brands.png" alt="Coffee Brands Page">
-                        <p class="image-caption">Coffee brands page</p>
+                        <img src="assets/pixell/persona-info.png" alt="List of Starbucks stores">
+                        <p class="image-caption">Persona Info</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/beans/brand-details.png" alt="Coffee Brands Detail View">
-                        <p class="image-caption">Coffee brands detail view</p>
+                        <img src="assets/pixell/journey-map.png" alt="Coffee Brands Page">
+                        <p class="image-caption">User Journey Map</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/beans/starbucks-stores.png" alt="List of Starbucks stores">
-                        <p class="image-caption">Starbucks coffee shop locator</p>
+                        <img src="assets/pixell/wireframe-prototype.png" alt="Starbucks store detail view">
+                        <p class="image-caption">Full prototype journey</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="assets/beans/store-details.png" alt="Starbucks store detail view">
-                        <p class="image-caption">Starbucks store detail view</p>
+                        <img src="assets/pixell/draft-prototype.png" alt="Beans About Page">
+                        <p class="image-caption">Draft Homescreen</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/pixell/Home Screen.png" alt="Beans About Page">
+                        <p class="image-caption">Final Homescreen</p>
                     </div>
                 </div>
             </div>
@@ -99,21 +103,50 @@
 
                 <div class="process-step">
                     <h3>Research and Planning</h3>
-                    <p>Describe your initial research, user personas, competitive analysis, or any planning work you did.</p>
-                    <div class="process-artifacts">
-                        <img src="assets/beans/ERD.drawio.png" alt="ERD plan">
-                        <p class="image-caption">Entity Relationship Diagram</p>
-                    </div>
+                    <p>
+                        We began by analyzing PiXELL River’s comprehensive case study, user personas, internal usage reports, and customer feedback. Our key insights included:
+                    </p>
+                    <ul>
+                        <li><strong>Individual customers</strong> aged 25–45—primarily mobile users—expressed serious concerns about data security and limited digital literacy.</li>
+                        <li><strong>Customer D</strong> specifically called for two-factor authentication to feel more secure using the mobile app.</li>
+                        <li><strong>15% growth</strong> in mobile app usage over the past year suggested a shift toward mobile-first engagement.</li><br>
+                    </ul>
+                    <p>
+                        We also mapped user journeys and identified the critical friction points—login complexity, lack of flexible options, and the need for security even after logging in. These insights shaped our multi-layered authentication design.
+                    </p>
                 </div>
 
                 <div class="process-step">
                     <h3>Challenges and Solutions</h3>
-                    <p>Highlight specific technical or design challenges you encountered and how you solved them.</p>
+                    <p>
+                        The challenge was to implement a strong security solution that remained inclusive for users with various devices, internet access levels, and digital skill sets. Here’s how we addressed them:
+                    </p>
+                    <ul>
+                        <li><strong>Challenge:</strong> Low trust in current security measures.<br>
+                            <strong>Solution:</strong> Introduced MFA with multiple entry points—biometric (Face ID/Fingerprint), one-time passcodes via SMS/email/phone call, and 3rd-party authentication apps—to give users control and confidence.</li>
+
+                        <li><strong>Challenge:</strong> Sensitive data exposure in public spaces.<br>
+                            <strong>Solution:</strong> Implemented post-login visibility toggles for balances and personal information to ensure privacy even during on-the-go banking.</li>
+
+                        <li><strong>Challenge:</strong> Device and literacy diversity.<br>
+                            <strong>Solution:</strong> Provided options for both advanced and basic devices, paired with onboarding support in the user’s preferred language to simplify setup.</li>
+                    </ul>
                 </div>
 
                 <div class="process-step">
                     <h3>Final Outcome</h3>
-                    <p>Describe the final product, any metrics of success (increased engagement, better performance, etc.), and client/user feedback.</p>
+                    <p>
+                        The prototype presents a practical, secure, and culturally respectful authentication system for PiXELL River’s mobile app. It directly aligns with user needs and modern security standards, all while preserving accessibility. The project demonstrates:
+                    </p>
+                    <ul>
+                        <li>Responsive design based on customer feedback</li>
+                        <li>Feasibility with current technologies and cost-effective implementation</li>
+                        <li>Improved user trust, especially among Indigenous clients in rural and urban areas</li>
+                        <li>Enhanced brand credibility through visible commitment to user safety</li><br>
+                    </ul>
+                    <p>
+                        This project not only solves a technical problem—it builds a bridge between digital innovation and community trust. It’s a testament to how inclusive UX design and secure software development can work hand-in-hand to serve diverse populations.
+                    </p>
                 </div>
             </div>
 
